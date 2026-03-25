@@ -112,7 +112,7 @@ def home():
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="https://www.facebook.com/share/1JKumr9zp1/" class="btn" style="background: #1DA1F2; width: 80%;">Facebook</a>
+                <a href="https://www.facebook.com/share/1JKumr9zp1/" class="btn" style="background: #1DA1F2; width: 80%;">Facebook</a><br>
                 <a href="/links" class="btn btn-blue" style="width: 200px;">Khám phá thêm ➔</a>
             </div>
         </div>
