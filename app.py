@@ -29,21 +29,97 @@ def index():
     </div>
     '''
 
-# --- LINK 2 (TRANG HOME) ---
+# --- LINK 2 (TRANG HOME PRO) ---
 @app.route('/home')
 def home():
     return COMMON_STYLE + '''
-    <div class="card" style="width: 500px;">
-        <h1>🏠 Trang Chủ Hacker Ninh Hòa</h1>
-        <p>Chào mừng bạn đã vượt qua bài kiểm tra Robot! Đây là nơi chứa các thông tin quan trọng nhất.</p>
-        <div style="text-align: left; background: #e9ecef; padding: 15px; border-radius: 8px; margin: 20px 0;">
-            <li>🔥 Dự án: Học lập trình Python</li>
-            <li>🚗 Sở thích: Siêu xe McLaren & Nissan GT-R</li>
-            <li>💪 Tập luyện: Calisthenics (Planche)</li>
+    <style>
+        /* Cho phép trang web có thể vuốt xuống */
+        body { height: auto; padding: 20px 0; display: block; } 
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden; /* Để ảnh không bị tràn góc bo */
+            padding-bottom: 30px;
+        }
+
+        .header-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Giúp ảnh không bị méo */
+        }
+
+        .content { padding: 30px; text-align: left; }
+
+        .music-player {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-box {
+            background: #eef2f7;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #007bff;
+        }
+    </style>
+
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f" class="header-img" alt="Hacker Workspace">
+
+        <div class="content">
+            <h1>🚀 Dashboard của Hacker Ninh Hòa</h1>
+            <p style="color: #666;">Chào mừng bạn đến với không gian riêng của tôi. Đây là nơi tôi lưu trữ mọi thứ quan trọng.</p>
+
+            <div class="music-player">
+                <p style="margin-right: 15px; font-weight: bold;">🎵 Đang phát:</p>
+                <audio controls autoplay loop>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Trình duyệt của bạn không hỗ trợ phát nhạc.
+                </audio>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>👤 Profile</h3>
+                    <p>Họ tên: Ninh Hòa Hacker<br>Tuổi: 15<br>Vị trí: Khánh Hòa, VN</p>
+                </div>
+                <div class="info-box" style="border-left-color: #28a745;">
+                    <h3>💻 Kỹ năng</h3>
+                    <p>• Python / Flask<br>• SQL Injection (Basic)<br>• Calisthenics</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h3>📜 Ghi chú cá nhân</h3>
+                <p>Mục tiêu năm 2024: Làm chủ Python và xây dựng được 10 dự án web thực tế. Luôn ghi nhớ: "Work hard, stay humble".</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/links" class="btn btn-blue" style="width: 200px;">Khám phá thêm ➔</a>
+            </div>
         </div>
-        <a href="/links" class="btn btn-blue">Khám phá các link khác ➔</a>
     </div>
+    
+    <p style="text-align: center; color: #aaa; margin-top: 20px;">© 2024 Ninh Hòa Web Project</p>
     '''
+    
 
 # --- LINK 3 (DANH SÁCH LINK TỰ GẮN) ---
 @app.route('/links')
