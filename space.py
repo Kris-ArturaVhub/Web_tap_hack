@@ -84,8 +84,8 @@ def home():
         <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f" class="header-img" alt="Hacker Workspace">
 
         <div class="content">
-            <h1>🚀 Dashboard của Hacker Ninh Hòa</h1>
-            <p style="color: #666;">Chào mừng bạn đến với không gian riêng của tôi. Đây là nơi tôi lưu trữ mọi thứ quan trọng.</p>
+            <h1>🚀 KAvnhub_space </h1>
+            <p style="color: #666;">Chào mừng bạn đến với không gian ảo. Đây là nơi tôi lưu trữ thông tin quan trọng.</p>
 
             <div class="music-player">
                 <p style="margin-right: 15px; font-weight: bold;">🎵 Đang phát:</p>
@@ -98,20 +98,21 @@ def home():
             <div class="info-grid">
                 <div class="info-box">
                     <h3>👤 Profile</h3>
-                    <p>Họ tên: Ninh Hòa Hacker<br>Tuổi: 15<br>Vị trí: Khánh Hòa, VN</p>
+                    <p>Bí danh: Kris_Artura <br>Born: 2010 <br>Vị trí: Khánh Hòa, VN</p>
                 </div>
                 <div class="info-box" style="border-left-color: #28a745;">
-                    <h3>💻 Kỹ năng</h3>
-                    <p>• Python / Flask<br>• SQL Injection (Basic)<br>• Calisthenics</p>
+                    <h3>💻 profile</h3>
+                    <p>• Python / Flask<br>• SQL Injection (Basic)<br>• sdt:84+799.269_197</p>
                 </div>
             </div>
 
             <div style="margin-top: 30px;">
-                <h3>📜 Ghi chú cá nhân</h3>
-                <p>Mục tiêu năm 2024: Làm chủ Python và xây dựng được 10 dự án web thực tế. Luôn ghi nhớ: "Work hard, stay humble".</p>
+                <h3>📜 Thông tư</h3>
+                <p>Lưu ý: web được tạo bởi thực tập sinh IT cùng AI,đảm bảo an toàn tuyệt đối.</p>
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.facebook.com/share/1JKumr9zp1/" class="btn" style="background: #1DA1F2; width: 80%;">Facebook</a><br>
                 <a href="/links" class="btn btn-blue" style="width: 200px;">Khám phá thêm ➔</a>
             </div>
         </div>
