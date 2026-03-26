@@ -81,7 +81,7 @@ def home():
     </style>
 
     <div class="container">
-         <img src="/https://github.com/Kris-ArturaVhub/KAvnhub/blob/main/Screenshot_2026-01-16-20-24-51-00_a23b203fd3aafc6dcb84e438dda678b6(Copy).jpg" alt="..." style="width: 200px; border-radius: 10px;">
+         <img src="/https://github.com/Kris-ArturaVhub/KAvnhub/raw/main/Screenshot_2026-01-16-20-24-51-00_a23b203fd3aafc6dcb84e438dda678b6(Copy).jpg" alt="..." style="width: 200px; border-radius: 10px;">
 
         <div class="content">
             <h1>🚀 KAvnhub_space </h1>
@@ -90,7 +90,7 @@ def home():
             <div class="music-player">
                 <p style="margin-right: 15px; font-weight: bold;">🎵 Đang phát:</p>
                 <audio controls autoplay loop>
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    <source src="https://github.com/Kris-ArturaVhub/KAvnhub/raw/main/livingroomsong.mp3" type="audio/mpeg">
                     Trình duyệt của bạn không hỗ trợ phát nhạc.
                 </audio>
             </div>
