@@ -113,7 +113,7 @@ def home():
 
             <div style="text-align: center; margin-top: 40px;">
                 
-                <a href="/links" class="btn btn-blue" style="width: 200px;">Khám phá thêm ➔</a>
+                <a href="/links" class="btn btn-blue" style="width: 200px;">Khám phá thêm ➔</a><br>
                 <a href="https://www.facebook.com/share/1JKumr9zp1/" class="btn" style="background: #1DA1F2; width: 40%;">Facebook</a><br>
                 <a href="https://www.tiktok.com/@ka.19920425?_r=1&_t=ZS-950s2mflaGA" class="btn" style="background: #ce1126; width: 40%;">Tiktok</a><br>
             </div>
