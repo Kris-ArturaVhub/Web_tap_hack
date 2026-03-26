@@ -81,7 +81,7 @@ def home():
     </style>
 
     <div class="container">
-        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f" class="header-img" alt="Hacker Workspace">
+         <img src="/static/Screenshot_2026-01-16-20-24-51-00_a23b203fd3aafc6dcb84e438dda678b6.jpg" alt="..." style="width: 200px; border-radius: 10px;">
 
         <div class="content">
             <h1>🚀 KAvnhub_space </h1>
