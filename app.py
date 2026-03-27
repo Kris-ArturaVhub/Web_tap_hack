@@ -1,6 +1,8 @@
 from flask import Flask, render_template_string, redirect, url_for
 
 app = Flask(__name__)
+app.secret_key = 'kris_artura_2026' # Chìa khóa để mã hóa mã xác thực
+
 
 # --- GIAO DIỆN TỔNG THỂ (CSS) ---
 COMMON_STYLE = '''
@@ -16,18 +18,29 @@ COMMON_STYLE = '''
 
 # --- LINK CHÍNH (TRANG CAPTCHA) ---
 @app.route('/')
-def index():
-    return COMMON_STYLE + '''
-    <div class="card">
-        <h2>Xác minh bảo mật</h2>
-        <p>Vui lòng xác nhận bạn không phải là Gay để tiếp tục.</p>
-        <div style="border: 1px solid #ccc; padding: 15px; background: #fafafa; border-radius: 5px; display: flex; align-items: center; gap: 10px; margin: 20px 0;">
-            <input type="checkbox" id="captcha" style="width: 25px; height: 25px; cursor: pointer;" onclick="setTimeout(() => { window.location.href='/home' }, 500)">
-            <label for="captcha" style="cursor: pointer;">Tôi không phải là gay</label>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/RecaptchaLogo.svg" width="30" style="margin-left: auto;">
-        </div>
+def captcha():
+    # Trang này chỉ hiện ô nhập mã, không hiện ảnh/nhạc
+    return '''
+    <div style="text-align: center; padding: 50px; font-family: sans-serif;">
+        <h2>HỆ THỐNG KAVNHUB</h2>
+        <p>Vui lòng nhập mã truy cập:</p>
+        <form action="/verify" method="post">
+            <input type="text" name="user_key" placeholder="Nhập Key..." style="padding: 10px; border-radius: 5px;">
+            <button type="submit" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px;">Vào hệ thống</button>
+        </form>
     </div>
     '''
+
+@app.route('/verify', methods=['POST'])
+def verify():
+    import flask
+    user_input = flask.request.form.get('user_key')
+    if user_input == "ArturaVhub": # Đây là Key của anh
+        flask.session['is_logged_in'] = True
+        return flask.redirect('/home')
+    else:
+        return '<h3>Sai mã rồi! <a href="/">Quay lại</a></h3>'
+        
 
 # --- LINK 2 (TRANG HOME PRO) ---
 @app.route('/home')
@@ -137,7 +150,40 @@ def other_links():
         <a href="https://www.facebook.com/share/1JKumr9zp1/" class="btn" style="background: #1DA1F2; width: 80%;">Facebook</a><br>
     </div>
     '''
+@app.route('/home')
+def home():
+    import flask
+    # Kiểm tra nếu chưa nhập mã thì đuổi về trang chủ
+    if not flask.session.get('is_logged_in'):
+        return flask.redirect('/')
 
+    # Nếu đã nhập mã đúng, hiện ảnh và nhạc
+    return '''
+    <div style="text-align: center; padding: 20px; font-family: sans-serif;">
+        <h1 style="color: #28a745;">TRUY CẬP THÀNH CÔNG!</h1>
+        
+        <img src="https://github.com/Kris-ArturaVhub/KAvnhub/raw/main/Screenshot_2026-anhnen.jpg" 
+             style="width: 100%; max-width: 400px; border-radius: 15px;">
+        
+        <br><br>
+        <audio controls autoplay>
+            <source src="https://github.com/Kris-ArturaVhub/KAvnhub/raw/main/livingroomsong.mp3" type="audio/mpeg">
+        </audio>
+        
+        <br><br>
+        <a href="/logout" style="color: red;">Đăng xuất</a>
+    </div>
+    '''
+
+@app.route('/logout')
+def logout():
+    import flask
+    flask.session.pop('is_logged_in', None)
+    return flask.redirect('/')
+    
+
+
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
     
