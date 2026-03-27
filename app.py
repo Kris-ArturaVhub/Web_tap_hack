@@ -19,8 +19,9 @@ COMMON_STYLE = '''
 # --- LINK CHÍNH (TRANG CAPTCHA) ---
 @app.route('/')
 def captcha():
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
     return '''
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <div style="text-align: center; padding: 50px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; height: 100vh;">
         <div style="background: white; padding: 30px; border-radius: 15px; display: inline-block; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
             <h2 style="color: #333; margin-bottom: 20px;">KAVNHUB SECURITY</h2>
